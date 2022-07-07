@@ -1,0 +1,239 @@
+:root {
+    --blanco: rgb(255, 255, 255);
+    --gray: rgb(247, 247, 248);
+    --rojo_inteso: rgb(233, 73, 89);
+    --gray_articles: rgb(230, 230, 230);
+    --gray_letter: #595959;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    width: auto;
+}
+
+/* BARRA DE NAVEGACION */
+.navegator_container {
+    /* ancho de nuestro contenedor */
+    width: 327px;
+    /* para centrar el contenedor */
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_store {
+    display: flex;
+    align-items: center;
+}
+
+.logo_store a {
+    text-decoration: none;
+}
+
+.btn_menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+/* barra de navegacion */
+
+/* CONTENEDOR INICIAL */
+.contenido_principal {
+    width: auto;
+}
+
+.informacion_inicial {
+    width: 327px;
+    display: grid;
+    position: relative;
+    row-gap: 2.5rem;
+    margin: auto;
+    padding: auto;
+}
+
+.sudadera_nga {
+    /* ajuste de la posicion de la imagen dentro del contenedor del grid */
+    width: 258px;
+    height: 430px;
+    padding-bottom: 2rem;
+    background-color: var(--rojo_inteso);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    justify-self: flex-end;
+    /* translateX es para que sabre salga del margen del contenedor */
+    transform: translateX(1.5rem);
+}
+
+.sudadera_nga img {
+    /* de esta manera se ajusta la imagen al tamaño del contenedor */
+    max-width: 100%;
+    height: auto;
+}
+
+.titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.description_home {
+    margin-bottom: 1.5rem;
+}
+
+.precio_home {
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--rojo_inteso);
+    margin-bottom: 3rem;
+}
+
+.btns_paginicial {
+    display: flex;
+    align-items: center;
+}
+
+.boton_gris {
+    padding: 1rem 1.5rem;
+    background-color: hsl(0, 0%, 75%);
+    color: hsl(0, 0%, 15%);
+    text-decoration: none;
+}
+
+.button_inicial {
+    display: inline-block;
+    background-color: hsl(0, 0%, 15%);
+    color: #fff;
+    padding: 1.25rem 2rem;
+    font-weight: 500;
+}
+/* contenedor inicial */
+
+/* CONTENEDOR TARJETAS */
+.productos {
+    /* separacion arriba y a los lados */
+    padding: 7rem 0;
+}
+
+.productos_filtro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    list-style: none;
+}
+
+.container_productos {
+    display: grid;
+    grid-template-columns: 200px;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.tarjeta_producto {
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.img_producto {
+    width: 150px;
+    
+}
+
+.img_producto img {
+    max-width: 100%;
+    height: auto;
+}
+
+.img_producto {
+    width: 100%;
+    background-color: hsl(0, 0%, 90%);
+    border-radius: 0.5rem 0.5rem 0 0;
+    text-align: center;
+    padding: 0.25rem 0;
+}
+
+.datos_producto {
+    padding: 1rem 0 1.25rem 1rem;
+}
+
+.precio_producto {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.nombre_producto {
+    font-size: .938rem;
+}
+
+.agregar_producto {
+    border-radius: 50%;
+    padding: 0.625rem;
+    display: inline-flex;
+    font-size: 1.25rem;
+    position: absolute;
+    background-color: var(--rojo_inteso);
+    color: black;
+}
+/* contenedor tarjetas */
+
+/* CONTENEDOR FOOTER */
+.pie_pagina {
+    background-color: hsl(0, 0%, 90%);
+}
+
+.contenedor_pie {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 2rem;
+    border-bottom: 1px solid hsl(0, 0%, 94%);
+    padding-bottom: 3rem;
+    max-width: 1024px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.footer_content {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.titulo_info {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer_link {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+    list-style: none;
+}
+
+.footer_copy {
+    display: block;
+    margin: 3.5rem 0 1rem 0;
+    text-align: center;
+    font-size: .75rem;
+    color: hsl(0, 0%, 55%);
+}
+/* contenedor footer */
