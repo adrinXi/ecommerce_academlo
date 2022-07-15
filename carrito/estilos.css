@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    transition: opacity 0.5s;
+}
+
+/* para que tenga efecto el boton cuando el cursor esta encima de el */
+button:hover {
+    opacity: 0.5;
+}
+
+/* accion para cuando demos click */
+button:active {
+    transform: scale(0.9);
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2em auto;
+}
+
+ /*para que se ajuste el tamaño del contenedor al contenido  */
+.foods {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    max-width: 250px;
+    text-align: center;
+}
+
+.food {
+    background-color: #66BFBF;
+    padding: 1em;
+    border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.food .food_img {
+    width: 100px;
+}
+
+/* para que la imagen tome tamaño respecto al padre */
+.food .food_img img {
+    width: 100%;
+}
+
+/* carrito */
+.sidebar_cart {
+    width: 30%;
+    height: 100vh;
+    background-color: #66BFBF;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
+
+    /* para que se esconda el sidebar */
+    /* si fuera positivo el porcentaje el sidebar pasa de derecha a izquierda */
+    margin-right: -100%;
+
+    transition: margin-right 0.5s;
+}
+
+.show_sidebar_cart {
+    margin-right: 0;
+}
+
+/* icono carrito */
+
+.shopping {
+    width: 50px;
+    height: 50px;
+
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 200;
+    /* position: absolute; */
+}
+
+.content_shopping {
+    position: relative;
+}
+
+.amountFood {
+    position: absolute;
+    top: -10px;
+    right: 0;
+}
+
+.shopping img {
+    width: 100%;
+}

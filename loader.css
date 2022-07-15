@@ -1,0 +1,33 @@
+/* LOADER */
+.load {
+    position: fixed; /* Las propiedades top, right, bottom, y  left especifican el desplazamiento desde los bordes del bloque contenedor del elemento. (El bloque contenedor es el ancestro relativo al cual el elemento está posicionado). Si el elemento tiene márgenes, se agregarán al desplazamiento. el elemento establece un nuevo contexto de formato de bloque para su contenido*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(206, 4%, 97%);
+    z-index: 1000; /* indica el orden de un elemento posicionado y sus descendientes. Cuando varios elementos se superponen, los elementos con mayor valor z-index cubren aquellos con menor valor.*/
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.load svg {
+    fill: hsl(354, 78%, 60%);
+    width: 100px;
+    animation: scroll 1.5s infinite;
+}
+
+/* keyframes pasos de una secuencia de animacion */
+@keyframes scroll { /*animacion del logo del loader solo arriba y abajo en una distancia de 10px*/
+    0% { /*lapso de tiempo*/
+        transform: translateY(0); /*trayectoria en el eje Y (vertical)*/
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+/*loader */

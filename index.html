@@ -8,10 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>academlo_ecommerce</title>
 </head>
 <body class="body">
-    <section class="principal_ecommerce">
+
+    <!-- LOADER -->
+    <!-- <div class="load">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.92 56.48" class="load__gif">
+        <title>Academlo</title>
+        <g>
+            <g>
+                <path
+                d="M24.45,56.48,0,42.36V14.12L24.46,0,48.92,14.12V42.36ZM1.89,41.26l22.56,13L47,41.26v-26l-22.56-13-22.56,13Z">
+                </path>
+                <path
+                d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
+            </path>
+            </g>
+        </g>
+    </div>
+    <section class="principal_ecommerce"> -->
+        <!-- Header -->
         <header class="header">
             <nav class="navegator_container">
                 <div class="logo_store">
@@ -23,14 +41,30 @@
                         <img src="./images/luna.svg" alt="luna" width="20px" height="20px">
                     </div>
                     <div class="bolsa_compras">
-                        <img src="./images/bolsa-de-la-compra (1).svg" alt="bolsa-de-la-compra" width="20px" height="20px">
+                        <div class="content_cartShopping">
+                            <span class="infoQuantityProduct">0</span>
+                            <i class='bx bx-cart-add bx-md'></i>
+                        </div> 
+                        <!-- <img src="./images/bolsa-de-la-compra (1).svg" alt="bolsa-de-la-compra" width="20px" height="20px"> -->
                     </div>
                     <div class="btn_menu">
                         <img src="./images/aplicaciones.svg" alt="app" width="20px" height="20px">
                     </div>
                 </div>
+                    <!-- contenedor de los productos por comprar -->
+                <div class="container_shopping">
+                    <div class="content_shopping">
+                        
+                    </div>
+                    <div class="total_shopping">
+                        <p>Total: <span class="shopping_total"></span></p>
+                        <button id="btnBuy">Comprar</button>
+                    </div>
+                </div>
+                
             </nav>
         </header>
+        
         <main class="contenido_principal">
             <div class="informacion_inicial">
                 <div class="sudadera_nga">
@@ -46,113 +80,114 @@
                     </div>
                 </div>
             </div>
-            <section class="productos">
-                <ul class="productos_filtro">
-                    <li class="producto_info">
-                        <h3 class="producto_title">Show All</h3>
-                        <span class="stock_product">show all products</span>
-                    </li>
-                    <li class="producto_info">
-                        <h3 class="producto_title">Hoodies</h3>
-                        <span class="stock_product">3 products</span>
-                    </li>
-                    <li class="producto_info">
-                        <h3 class="producto_title">Shirts</h3>
-                        <span class="stock_product">4 products</span>
-                    </li>
-                    <li class="producto_info">
-                        <h3 class="producto_title">Swetshirts</h3>
-                        <span class="stock_product">4 products</span>
-                    </li>
-                </ul>
-                <div class="container_productos">
-                    <article class="tarjeta_producto">
-                        <div class="img_producto">
-                            <img src="./images/featured1.png" alt="uno">
-                        </div>
-                        <div class="datos_producto">
-                            <div class="precio_producto">
-                                <h2 class="precio">$14.00</h2>
-                                <span class="cantidad_producto">Stock: 10</span>
-                            </div>
-                            <h3 class="nombre_producto">Hoodies</h3>
-                            <button class="agregar_producto">
-                                <i class="bx">+</i>
-                            </button>
-                        </div>
-                    </article>
-                    <article class="tarjeta_producto">
-                        <div class="img_producto">
-                            <img src="./images/featured2.png" alt="dos">
-                        </div>
-                        <div class="datos_producto">
-                            <div class="precio_producto">
-                                <h2 class="precio">$14.00</h2>
-                                <span class="cantidad_producto">Stock: 10</span>
-                            </div>
-                            <h3 class="nombre_producto">Hoodies</h3>
-                            <button class="agregar_producto">+</button>
-                        </div>
-                    </article>
-                    <article class="tarjeta_producto">
-                        <div class="img_producto">
-                            <img src="./images/featured3.png" alt="tres">
-                        </div>
-                        <div class="datos_producto">
-                            <div class="precio_producto">
-                                <h2 class="precio">$14.00</h2>
-                                <span class="cantidad_producto">Stock: 10</span>
-                            </div>
-                            <h3 class="nombre_producto">Hoodies</h3>
-                            <button class="agregar_producto">+</button>
-                        </div>
-                    </article>
+            <!-- contenedor productos -->
+            <section class="container_products">
+                <div class="filters">
+                    <ul class="tags">
+                        <li data-filter="all">
+                            <h4>Show All</h4>
+                            <span>show all product</span>
+                        </li>
+                        <li data-filter=".hd">
+                            <h4>Hoodies</h4>
+                            <span>3 products</span>
+                        </li>
+                        <li data-filter=".sh">
+                            <h4>Shirts</h4>
+                            <span>4 products</span>
+                        </li>
+                        <li data-filter=".sw">
+                            <h4>Sweatshirts</h4>
+                            <span>4 products</span>
+                        </li>
+                    </ul>
+
+                    <div class="content_element" id="contentProducts">
+                       
+                    </div>
+
                 </div>
             </section>
-        </main> 
+        </main>
+
+        <!-- contenedor del footer -->
         <footer class="pie_pagina">
+            <div class="content_footer">
+                <div class="information">
+                    <h2>Our information</h2>
+                    <ul>
+                        <li>Toluca-México</li>
+                    </ul>
+                </div>
 
-            <div class="contenedor_pie">
+                <div class="information">
+                    <h2>About us</h2>
+                    <ul>
+                        <li>
+                            <a href="#" class="enlace">Support Center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="enlace">Coustumer Support</a>
+                        </li>
+                        <li>
+                            <a href="#" class="enlace">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="enlace">Copy Rigth</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <div class="footer_content">
+                <div class="information">
+                    <h2>Product</h2>
+                    <ul>
+                        <li>
+                            <a href="#" class="enlace">Hoodies</a>
+                        </li>
+                        <li>
+                            <a href="#" class="enlace">Shirts</a>
+                        </li>
+                        <li>
+                            <a href="#" class="enlace">Sweatshirts</a>
+                        </li>
+                    </ul>
+                </div>
 
-                    <div class="nuestra_info">
-                        <h3 class="titulo_info">Our Information</h3>
-                        <ul class="footer_link">
-                            <li>Toluca-México</li>
-                        </ul>    
-                    </div>
+                <div class="information_social">
+                    <h2>Social</h2>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/"><img src="./img/facebook.svg" alt="fb"></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/"><img src="./img/instagram.svg" alt="ig"></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/"><img src="./img/twitter.svg" alt=""></a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="footer_content">
-                    <div class="nuestra_info">
-                        <h3 class="titulo_info">About Us</h3>
-                        <ul class="footer_link">
-                            <li>Support center</li>
-                            <li>Customer center</li>
-                            <li>About Us</li>
-                            <li>Copy Rigth</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer_content">
-                    <div class="nuestra_info">
-                        <h3 class="titulo_info">Product</h3>
-                        <ul class="footer_link">
-                            <li>Hoodies</li>
-                            <li>Shirts</li>
-                            <li>Swetshirts</li>
-                        </ul>    
-                    </div>
-                </div>
-                <div class="footer_content">
-                    <div class="nuestra_info">
-                        <h3 class="titulo_info">Social</h3>
-                        <ul>im</ul>
-                    </div>
-                </div>
+
             </div>
+
+
+
             <span class="footer_copy">&copy; ACADEMLO. All Rigths Reserved</span>
         </footer>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js" integrity="sha512-nKZDK+ztK6Ug+2B6DZx+QtgeyAmo9YThZob8O3xgjqhw2IVQdAITFasl/jqbyDwclMkLXFOZRiytnUrXk/PM6A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- <script>
+        mixitup(".content_element", {
+            selectors: {
+                target: '.element'
+            },
+            animation: {
+                duration: 300
+            }
+        }).filter('all')
+    </script> -->
+
+    <script src="./js/main.js" type="module"></script>
 </body>
 </html>
